@@ -25,14 +25,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Rustlang custom image build and push
         id: docker_build_rustlang_custom
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ./rust
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/rust:1.0
       - name: Blackarch custom image build and push
         id: docker_build_blackarch_custom
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ./blackarch-custom
           push: true
