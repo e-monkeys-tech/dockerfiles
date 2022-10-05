@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3.1.0
 
     - name: Install Rustup (macOS)
       run: |
@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3.1.0
     - run: rustup toolchain install nightly --profile minimal --component rustfmt
     - run: rustup default nightly
     - run: cargo +nightly fmt -- --check
@@ -88,7 +88,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3.1.0
     - run: rustup toolchain install nightly --profile minimal --component clippy
     - run: rustup default nightly
     - run: rustup target add ${{ matrix.target }}
